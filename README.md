@@ -1,6 +1,6 @@
 # Polybar Nord 主题
 
-![i3-nord.png](https://tupp.xyz/2019/08/05/15650043555d481243502de.png)
+![i3-nord.png](https://github.com/Yucklys/polybar-nord-theme/raw/master/screenshot.png)
 
 <!--more-->
 
