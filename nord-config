@@ -1,0 +1,35 @@
+; vim:ft=dosini
+
+[config]
+# network interface, check by `ip link show`
+interface = wlp2s0
+
+# when the current battery capacity excess this value,
+# the full-capacity format will be displayed.
+# for some reason the battery capacity never go more than 95
+# even when charging
+battery-full-at = 90
+
+# battery and adapter
+battery-bat = BAT0
+battery-adp = ADP1
+
+# soundcard setting
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+# mpd service connection setting
+mpd-host = 127.0.0.1
+mpd-port = 6600
+
+thermal-zone = 0
+# Base temperature for where to start the ramp (in degrees celsius)
+base-temperature = 20
+# Threshold temperature to display warning label (in degrees celsius)
+warn-temperature = 70
+
+# GitHub personal token, generate from https://github.com/settings/tokens/new?scopes=notifications&description=Notifier+for+Polybar
+# where select at least `notifications` option
+github-token = fcdf25b15752426434ad579c6a4d45cbdc33937e
+

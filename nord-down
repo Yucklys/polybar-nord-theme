@@ -1,0 +1,125 @@
+; vim:ft=dosini
+[module/cpu]
+type = internal/cpu
+interval = 3
+
+format = <ramp-load> <label>
+
+ramp-load-0 = 
+ramp-load-0-foreground = ${colors.success}
+
+ramp-load-1 = 
+ramp-load-1-foreground = ${colors.warning}
+
+ramp-load-2 = 
+ramp-load-2-foreground = ${colors.urgent}
+
+[module/show-desktop]
+type = custom/text
+
+content = 
+
+click-left = i3-msg workspace 25:Desktop
+
+[module/memory]
+type = internal/memory
+interval = 3
+
+format = <ramp-used> <label>
+
+label = %gb_used%/%gb_total%
+
+ramp-used-0 = 
+ramp-used-0-foreground = ${colors.success}
+
+ramp-used-1 = 
+ramp-used-1-foreground = ${colors.warning}
+
+ramp-used-2 = 
+ramp-used-2-foreground = ${colors.urgent}
+
+[module/github]
+type= internal/github
+
+token = ${config.github-token}
+
+empty-notifications = false
+interval = 10
+
+label =  %notifications%
+
+[module/daily-poem]
+type = custom/ipc
+
+# replace IDZJPFP9nkjOfsJ5KJO98E4Tgu3DbFHh with your token from https://v2.jinrishici.com/token.
+hook-0 = ~/.config/polybar/scripts/daily-poem require IDZJPFP9nkjOfsJ5KJO98E4Tgu3DbFHh ~/.config/polybar/scripts/poem.txt
+hook-1 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt content 
+hook-2 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt origin
+hook-3 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt match
+
+initial = 1
+
+click-left = polybar-msg -p %pid% hook daily-poem 2
+scroll-up = polybar-msg -p %pid% hook daily-poem 3
+scroll-down = polybar-msg -p %pid% hook daily-poem 4
+click-right = polybar-msg -p %pid% hook daily-poem 1
+
+format-foreground = ${colors.nord8}
+format-underline = ${colors.nord7}
+
+[module/network-detail]
+type = internal/network
+interface = ${config.interface}
+
+interval = 3
+
+format-connected = <label-connected>
+
+label-connected =  %downspeed:9%   %upspeed:9%
+label-connected-foreground = ${colors.success}
+
+[module/temperature]
+type = internal/temperature
+
+thermal-zone = ${config.thermal-zone}
+
+base-temperature = ${config.base-temperature}
+
+warn-temperature = ${config.warn-temperature}
+
+; Format
+format = <ramp> <label>
+format-warn = <label-warn>
+format-warn-background = ${colors.nord4}
+
+label-warn =  %temperature-c%
+label-warn-padding = 1
+label-warn-foreground = ${colors.urgent}
+label-warn-background = ${colors.nord4}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+
+ramp-0-foreground = ${colors.nord8}
+ramp-1-foreground = ${colors.nord8}
+ramp-2-foreground = ${colors.success}
+ramp-3-foreground = ${colors.success}
+ramp-4-foreground = ${colors.warning}
+
+[module/info-hackspeed]
+type = custom/script
+exec = ~/.config/polybar/scripts/info-hackspeed.sh
+tail = true
+label-foreground = ${colors.nord8}
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/scripts/openweathermap-fullfeatured.sh
+interval = 600
+
+label-font = 4
+label-foreground = ${colors.function}
