@@ -1,16 +1,6 @@
----
-title: Polybar Nord主题配置
-date: 2019-08-05
-categories:
-- Customization
-- Linux
-tags:
-- polybar
----
+# Polybar Nord 主题
 
-最近迷上了 [Nord](https://www.nordtheme.com/) 配色，把我的终端、vim、以及 i3wm 的配色全部换成了Nord。不过 Polybar 我并没有找到合适的 Nord 配色，所以花了点时间，重新写了一遍配置，使用了 Nord 配色并且基本支持所有的官方 module 和一些社区以及本人写的 module。
-
-- ![i3-nord.png](https://tupp.xyz/2019/08/05/15650043555d481243502de.png)
+![i3-nord.png](https://tupp.xyz/2019/08/05/15650043555d481243502de.png)
 
 <!--more-->
 
@@ -170,7 +160,3 @@ tags:
 | 绑定     | 事件                        |
 | -------- | --------------------------- |
 | 鼠标左击 | i3-msg workspace 25:Desktop |
-
-# 结语
-
-除了 Polybar，我还写了 rofi，i3 以及 dunst 的配置，有时间再整理整理发出来吧。干这活的确挺繁琐的，Polybar 的配置难度算是比较低的了，官方的 wiki 简单易懂，不需要什么学什么额外的东西。其实还有一些细节处可以调整一下，比如歌手名和歌名的样式分开，不过这需要声明一个环境变量，对于通用的配置来说过于复杂了，所以个人配置我自己再琢磨琢磨，给大家一份开箱即用的配置就可以了。
