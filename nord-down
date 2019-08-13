@@ -53,16 +53,14 @@ type = custom/ipc
 
 # replace IDZJPFP9nkjOfsJ5KJO98E4Tgu3DbFHh with your token from https://v2.jinrishici.com/token.
 hook-0 = ~/.config/polybar/scripts/daily-poem require IDZJPFP9nkjOfsJ5KJO98E4Tgu3DbFHh ~/.config/polybar/scripts/poem.txt
-hook-1 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt content 
-hook-2 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt origin
-hook-3 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt match
+hook-1 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt plus
+hook-2 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt minus
 
 initial = 1
 
-click-left = polybar-msg -p %pid% hook daily-poem 2
-scroll-up = polybar-msg -p %pid% hook daily-poem 3
-scroll-down = polybar-msg -p %pid% hook daily-poem 4
-click-right = polybar-msg -p %pid% hook daily-poem 1
+scroll-up = polybar-msg -p %pid% hook daily-poem 2
+scroll-down = polybar-msg -p %pid% hook daily-poem 3
+double-click-left = polybar-msg -p %pid% hook daily-poem 1
 
 format-foreground = ${colors.nord8}
 format-underline = ${colors.nord7}

@@ -62,8 +62,8 @@ font-1 = Font Awesome 5 Free:style=Solid:pixelsize=12;1
 font-2 = Font Awesome 5 Brands:pixelsize=8;1
 font-3 = Weather Icons:style=Regular:size=12;1
 
-modules-left = weather info-hackspeed 
-modules-center = github daily-poem
+modules-left = weather info-hackspeed github
+modules-center = daily-poem
 modules-right = network-detail temperature memory cpu show-desktop
 
 tray-position = none
