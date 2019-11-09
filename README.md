@@ -12,8 +12,8 @@ The theme and module collection for [Polybar](https://github.com/polybar/polybar
 
 - [Install](#install)
 - [Usage](#usage)
-- [File Structure](#File Structure)
-- [Module Details](#Module Details)
+- [File Structure](#file-structure)
+- [Module Details](#module-details)
 
 ## Install
 
