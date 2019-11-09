@@ -1,7 +1,7 @@
 ; vim:ft=dosini
 [module/cpu]
 type = internal/cpu
-interval = 3
+interval = 1
 
 format = <ramp-load> <label>
 
@@ -51,8 +51,8 @@ label =  %notifications%
 [module/daily-poem]
 type = custom/ipc
 
-# replace IDZJPFP9nkjOfsJ5KJO98E4Tgu3DbFHh with your token from https://v2.jinrishici.com/token.
-hook-0 = ~/.config/polybar/scripts/daily-poem require IDZJPFP9nkjOfsJ5KJO98E4Tgu3DbFHh ~/.config/polybar/scripts/poem.txt
+# replace B25KQR2Z50dxWG2oLX+PfPG5OqP/BG4s with your token from https://v2.jinrishici.com/token.
+hook-0 = ~/.config/polybar/scripts/daily-poem require B25KQR2Z50dxWG2oLX+PfPG5OqP/BG4s ~/.config/polybar/scripts/poem.txt
 hook-1 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt plus
 hook-2 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt minus
 
@@ -62,7 +62,6 @@ scroll-up = polybar-msg -p %pid% hook daily-poem 2
 scroll-down = polybar-msg -p %pid% hook daily-poem 3
 double-click-left = polybar-msg -p %pid% hook daily-poem 1
 
-format-foreground = ${colors.nord8}
 format-underline = ${colors.nord7}
 
 [module/network-detail]
@@ -88,12 +87,12 @@ warn-temperature = ${config.warn-temperature}
 ; Format
 format = <ramp> <label>
 format-warn = <label-warn>
-format-warn-background = ${colors.nord4}
+format-warn-background = ${colors.foreground}
 
 label-warn =  %temperature-c%
 label-warn-padding = 1
 label-warn-foreground = ${colors.urgent}
-label-warn-background = ${colors.nord4}
+label-warn-background = ${colors.foreground}
 
 ramp-0 = 
 ramp-1 = 
@@ -112,7 +111,6 @@ ramp-4-foreground = ${colors.warning}
 type = custom/script
 exec = ~/.config/polybar/scripts/info-hackspeed.sh
 tail = true
-label-foreground = ${colors.nord8}
 
 [module/weather]
 type = custom/script
@@ -120,4 +118,3 @@ exec = ~/.config/polybar/scripts/openweathermap-fullfeatured.sh
 interval = 600
 
 label-font = 4
-label-foreground = ${colors.function}

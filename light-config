@@ -1,0 +1,91 @@
+; vim:ft=dosini
+[global-wm]
+include-file = $HOME/.config/polybar/light-colors
+include-file = $HOME/.config/polybar/nord-top
+include-file = $HOME/.config/polybar/nord-down
+include-file = $HOME/.config/polybar/nord-config
+
+
+[bar/nord-top]
+monitor = ${env:MONITOR:eDP1}
+width = ${config.width}
+height = ${config.height}
+offset-x = ${config.offset-x}
+offset-y = ${config.offset-y}
+radius = ${config.radius}
+
+fixed-center = ${config.fixed-center}
+dpi = ${config.dpi}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = ${config.line-size}
+
+padding-left = 0
+padding-right = 0
+
+override-redirect = ${config.override-redirect}
+
+module-margin = 1
+
+font-0 = FiraCodeRegular:pixelsize=12
+font-1 = FontAwesome5FreeSolid:pixelsize=12;1
+font-2 = FontAwesome5FreeRegular:pixelsize=12;1
+font-3 = FontAwesome5Brands:pixelsize=8;1
+font-4 = WenQuanYiMicroHei:size=12
+
+modules-left = ${config.top-left}
+modules-center = ${config.top-center}
+modules-right = ${config.top-right}
+
+tray-position = ${config.systray-top}
+tray-padding = 0
+tray-detached = false
+tray-maxsize = 30
+
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/nord-down]
+monitor = ${env:MONITOR:eDP1}
+width = ${config.width}
+height = ${config.height}
+offset-x = ${config.offset-x}
+offset-y = ${config.offset-y}
+radius = ${config.radius}
+
+fixed-center = ${config.fixed-center}
+bottom = true
+dpi = ${config.dpi}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = ${config.line-size}
+
+padding = 2
+
+module-margin = 2
+
+font-0 = FiraCodeRegular:pixelsize=12
+font-1 = Font Awesome 5 Free:style=Solid:pixelsize=12;1
+font-2 = Font Awesome 5 Brands:pixelsize=8;1
+font-3 = Weather Icons:style=Regular:size=12;1
+font-4 = WenQuanYiMicroHei:size=12
+
+modules-left = ${config.bottom-left}
+modules-center = ${config.bottom-center}
+modules-right = ${config.bottom-right}
+
+tray-position = ${config.systray-bottom}
+tray-padding = 3
+tray-detached = false
+tray-maxsize = 22
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+

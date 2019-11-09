@@ -1,23 +1,76 @@
 ; vim:ft=dosini
 
 [config]
+# DPI value for HiDPI screen
+dpi = 192
+
+# bar position, apply globally
+width = 100%
+height = 3%
+offset-x = 0%
+offset-y = 0%
+radius = 0.0
+
+fixed-center = true
+override-redirect = false
+
+# module list:
+# alsa: Display current volume
+# backlight: Display screen brightness
+# date: Display date
+# notify: Notify icon, can customize its binding
+# network-short: Network connect icon, can customize its binding
+# battery: Battery info
+# keyboard: CapsLock indicator
+# mpd: mpd status and controls
+# i3: i3 workspace icons
+# workspace-name: i3 current workspace name, need to be in the format like "1:Home"
+# title: title of the active window
+# network-detail: Download and upload speed 
+# weather: Display openweather info
+# info-hackspeed: Numper of characters clicked per minute
+# daily-poem: Display poem
+# temperature: Display internal temperature
+# memory: Display memory usage
+# cpu: Display cpu usage
+# show-desktop: Display desktop (i3 only)
+
+# Top modules
+top-left = i3 title
+top-center = mpd
+top-right = keyboard backlight alsa battery network-short date
+
+# Bottom modules
+bottom-left = info-hackspeed
+bottom-center = daily-poem
+bottom-right = temperature memory cpu
+
+systray-top = none
+systray-bottom = left
+
+# global style
+line-size = 6
+
+# Modules configure option
+# the default value in this section should work in most cases,
+# if some of them doesn't suit your environment, you can change
+# it from here.
 # network interface, check by `ip link show`
-interface = wlp2s0
+interface = wlp59s0
 
 # when the current battery capacity excess this value,
 # the full-capacity format will be displayed.
-# for some reason the battery capacity never go more than 95
-# even when charging
-battery-full-at = 90
+battery-full-at = 95
 
 # battery and adapter
 battery-bat = BAT0
-battery-adp = ADP1
+battery-adp = AC
 
 # soundcard setting
 master-soundcard = default
 speaker-soundcard = default
 headphone-soundcard = default
+master-mixer = Master
 
 # mpd service connection setting
 mpd-host = 127.0.0.1
@@ -31,5 +84,19 @@ warn-temperature = 70
 
 # GitHub personal token, generate from https://github.com/settings/tokens/new?scopes=notifications&description=Notifier+for+Polybar
 # where select at least `notifications` option
-github-token = fcdf25b15752426434ad579c6a4d45cbdc33937e
+github-token = 00ed987a6d7efd532c5b4ca0849c2803228d1b5d
 
+# notify module setting
+notify-click-left = xdotool key control+grave
+
+# network module setting
+network-click-left = i3-msg workspace 2
+
+# i3
+# Only show workspaces defined on the same output as the bar
+#
+# Useful if you want to show monitor specific workspaces
+# on different bars
+#
+# Default: false
+i3-pin-workspaces = false

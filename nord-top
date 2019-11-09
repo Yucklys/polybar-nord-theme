@@ -2,44 +2,16 @@
 [module/i3]
 type = internal/i3
 
-; Only show workspaces defined on the same output as the bar
-;
-; Useful if you want to show monitor specific workspaces
-; on different bars
-;
-; Default: false
-pin-workspaces = false
+pin-workspaces = ${config.i3-pin-workspaces}
 
-; This will split the workspace name on ':'
-; Default: false
 strip-wsnumbers = true
 
-; Sort the workspaces by index instead of the default
-; sorting that groups the workspaces by output
-; Default: false
 index-sort = true
-
-; Create click handler used to focus workspace
-; Default: true
 enable-click = true
-
-; Create scroll handlers used to cycle workspaces
-; Default: true
 enable-scroll = true
-
-; Wrap around when reaching the first/last workspace
-; Default: true
 wrapping-scroll = true
-
-; Set the scroll cycle direction 
-; Default: true
 reverse-scroll = true
 
-; Use fuzzy (partial) matching on labels when assigning 
-; icons to workspaces
-; Example: code;♚ will apply the icon to all workspaces 
-; containing 'code' in the label
-; Default: false
 fuzzy-match = false
 
 ; Available tags:
@@ -57,24 +29,23 @@ ws-icon-5 = 25:Desktop;
 ws-icon-default = 
 
 ; color
-label-focused = %icon%
-label-focused-background = ${colors.nord1}
-label-focused-underline = ${colors.nord5}
-label-focused-foreground = ${colors.nord6}
+label-focused = 
+label-focused-underline = ${colors.nord7}
+label-focused-foreground = ${colors.nord7}
 label-focused-padding = 2
 
-label-unfocused = %icon%
+label-unfocused = •
 label-unfocused-foreground = ${colors.nord9}
 label-unfocused-padding = 2
 
-label-urgent = %icon%
+label-urgent = 
 label-urgent-foreground = ${colors.urgent}
-label-urgent-background = ${colors.nord4}
+label-urgent-background = ${colors.foreground}
 label-urgent-padding = 2
 
 ; seperator
 label-separator = |
-label-separator-foreground = ${colors.nord2}
+label-separator-foreground = ${colors.buffer}
 
 [module/workspace-name]
 type = internal/i3
@@ -84,15 +55,24 @@ format = <label-state>
 
 label-focused = %name%
 label-focused-padding = 2
-label-focused-underline = ${colors.nord5}
+label-focused-foreground = ${colors.nord7}
+label-focused-underline = ${colors.nord7}
 
 label-unfocused = 
 
 label-urgent = %name%
 label-urgent-foreground = ${colors.urgent}
-label-urgent-background = ${colors.nord4}
+label-urgent-background = ${colors.foreground}
 label-urgent-padding = 2
 
+[module/title]
+type = internal/xwindow
+format-foreground = ${colors.nord7}
+format-underline = ${colors.nord7}
+format-padding = 4
+
+label-maxlen = 20
+label-empty = Desktop
 
 [module/date]
 type = internal/date
@@ -106,7 +86,6 @@ date-alt = %Y-%m-%d%
 format = <label>
 label =  %date%
 label-margin = 1
-label-foreground = ${colors.nord8}
 label-underline = ${colors.nord8}
 
 [module/battery]
@@ -118,6 +97,7 @@ battery = ${config.battery-bat}
 adapter = ${config.battery-adp}
 
 format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${colors.foreground}
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
@@ -126,12 +106,12 @@ animation-charging-4 = 
 animation-charging-framerate = 750
 
 format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${colors.notify}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-label-discharging-foreground = ${colors.notify}
 ramp-capacity-foreground = ${colors.notify}
 
 label-full = 
@@ -142,8 +122,8 @@ label-full-underline = ${colors.success}
 type = internal/xkeyboard
 
 ; List of indicators to ignore
-blacklist-0 = num lock
-blacklist-1 = scroll lock
+bufferlist-0 = num lock
+bufferlist-1 = scroll lock
 
 ; Format
 format = <label-indicator>
@@ -158,27 +138,15 @@ layout-icon-default = 
 [module/alsa]
 type = internal/alsa
 
-; Soundcard to be used
-; Usually in the format hw:# where # is the card number
-; You can find the different card numbers in `/proc/asound/cards`
-master-soundcard = default
-speaker-soundcard = default
-headphone-soundcard = default
+master-soundcard = ${config.master-soundcard}
+speaker-soundcard = ${config.speaker-soundcard}
+headphone-soundcard = ${config.headphone-soundcard}
 
-; Name of the master, speaker and headphone mixers
-; Use the following command to list available mixer controls:
-; $ amixer scontrols | sed -nr "s/.*'([[:alnum:]]+)'.*/\1/p"
-; If master, speaker or headphone-soundcard isn't the default, 
-; use `amixer -c # scontrols` instead where # is the number 
-; of the master, speaker or headphone soundcard respectively
-;
-; Default: Master
-master-mixer = Master
-
-; Find by `pacmd list-sinks`, name field
+master-mixer = ${config.master-mixer}
 
 ; Format 
 format-volume = <ramp-volume> <label-volume>
+format-volume-underline = ${colors.function}
 
 label-muted =  muted
 label-muted-foreground = ${colors.urgent}
@@ -194,7 +162,6 @@ ramp-volume-2-foreground = ${colors.urgent}
 ramp-headphones-0 = 
 
 ramp-volume-foreground = ${colors.nord7}
-label-volume-foreground = ${colors.nord8}
 
 [module/backlight]
 type = internal/xbacklight
@@ -203,12 +170,12 @@ enable-scroll = true
 
 ; Format
 format = <ramp> <label>
+format-underline = ${colors.nord9}
 
 ramp-0 = 
 
 label = %{A1:$HOME/.config/polybar/scripts/toggle-redshift.sh:}%percentage%%%{A}
-ramp-foreground = ${colors.nord4}
-label-foreground = ${colors.nord8}
+ramp-foreground = ${colors.nord9}
 
 [module/mpd]
 type = internal/mpd
@@ -222,6 +189,7 @@ format-paused = <toggle> <icon-prev> <label-song> <icon-next> <icon-stop>
 format-stopped =  <toggle>
 
 label-song-underline = ${colors.nord8}
+label-song = %artist:0:10:...% - %title:0:10:...%
 
 icon-play = 
 icon-play-foreground = ${colors.success}
@@ -246,10 +214,10 @@ icon-random-margin = 1
 toggle-on-foreground = ${colors.success}
 toggle-off-foreground = ${colors.urgent}
 
-bar-progress-width = 10
+bar-progress-width = 20
 bar-progress-indicator = |
-bar-progress-fill = ─
-bar-progress-empty = ─
+bar-progress-fill = -
+bar-progress-empty = -
 bar-progress-gradient = true
 bar-progress-foreground-0 = ${colors.nord7}
 bar-progress-foreground-1 = ${colors.nord8}
@@ -262,7 +230,7 @@ content-foreground = ${colors.warning}
 content-underline = ${colors.warning}
 content-padding = 1
 
-click-left = xdotool key control+grave
+click-left = ${config.notify-click-left}
 
 [module/network-short]
 type = internal/network
@@ -270,7 +238,11 @@ interface = ${config.interface}
 
 interval = 1
 
-format-connected = <ramp-signal>
+format-connected = %{A1:networkmanager_dmenu:}<ramp-signal>%{A}
+format-disconnected = %{A1:networkmanager_dmenu:}<label-disconnected>%{A}
+
+label-disconnected = 
+label-disconnected-foreground = ${colors.urgent}
 
 ramp-signal-0 = 
 ramp-signal-1 = 

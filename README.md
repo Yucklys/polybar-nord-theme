@@ -1,12 +1,72 @@
-# Polybar Nord 主题
+# Polybar Nord
 
-![i3-nord.png](https://github.com/Yucklys/polybar-nord-theme/raw/master/screenshot.png)
+> Collection of Polybar theme and module.
+
+The theme and module collection for [Polybar](https://github.com/polybar/polybar) based on [Nord](https://www.nordtheme.com/) colors. This theme provides two bar setups, each of them has light and dark variants. Besides the official modules, there are also scripts from [polybar-scripts](https://github.com/polybar/polybar-scripts) and myself which are configured to suit the theme.
+
+![i3-nord-dark.png](https://github.com/Yucklys/polybar-nord-theme/raw/master/polybar-nord.png)
 
 <!--more-->
 
-# 概况
+## Table of Contents
 
-支持的 module：
+- [Install](#install)
+- [Usage](#usage)
+- [File Structure](#File Structure)
+- [Module Details](#Module Details)
+
+## Install
+
+### Dependency
+
+Required dependency:
+
+1. [Font Awesome](https://www.archlinux.org/packages/community/any/ttf-font-awesome/)
+
+Optional dependency:
+
+1. [Weather Icon](https://github.com/erikflowers/weather-icons)（required by `weather` module to display weather icon）
+2. Dunst （required by `notify` module to display history notify）
+3. redshift （required by `backlight` module to toggle redshift service）
+
+### Install by `git clone` (recommand)
+
+```shell
+git clone https://github.com/Yucklys/polybar-nord-theme ~/.config/polybar/
+```
+
+`~/.config/polybar` is the default path for polybar configuration, if you want to use other location, change `~/.config/polybar` to your location and also change the location specified in the `launch.sh` file.
+
+## Usage
+
+1. Enter the installation directory `cd ~/.config/polybar`.
+2. Run `./launch.sh light` for light theme, and `./launch.sh dark` for dark theme.
+3. For customization, most of the options are listed in `nord-config` file. For more details, check [File Structure](#File Structure) part.
+4. `pkill polybar` to kill the bars.
+
+## File Structure
+
+### `dark-colors` and `light-colors`
+
+The color for dark and light theme. You don't need to edit these flies unless you want to change the color globally.
+
+### `dark-config` and `light-config`
+
+The config files for dark and light theme. Most of the settings are covered by `nord-config` except font settings. You can change the font setting in these files.
+
+### `nord-config`
+
+The global config file. You can customize the position of the bars, DPI setting, modules, etc. The detailed help messages are in the comment for each option.
+
+### `nord-top` and `nord-down`
+
+The modules for top and bottom bar setup. For some specific modules you need to edit these files. For more details of these modules check [Module Details](#Module Details).
+
+### `scripts`
+
+The directory contains all the scripts and files that required by the modules. 
+
+## Module Details
 
 1. [alsa](#alsa)
 2. [backlight](#backlight)
@@ -16,152 +76,144 @@
 6. [network-short](#network-short)
 7. [battery](#battery)
 8. [keyboard](#keyboard)
-9. [systray](#systray)
 10. [mpd](#mpd)
 11. [i3](#i3)
 12. [workspace-name](#workspace-name)
-13. [weather](#weather)
-14. [info-hackspeed](#info-hackspeed)
-15. [github](#github)
-16. [daily-poem](#daily-poem)
-17. [temperature](temperature)
-18. [memory](#memory)
-19. [cpu](#cpu)
-20. [show-desktop](#show-desktop)
+13. [title](#title)
+14. [weather](#weather)
+15. [info-hackspeed](#info-hackspeed)
+16. [github](#github)
+17. [daily-poem](#daily-poem)
+18. [temperature](temperature)
+19. [memory](#memory)
+20. [cpu](#cpu)
+21. [show-desktop](#show-desktop)
 
-必需依赖：
+### alsa
 
-1. [Font Awesome](https://www.archlinux.org/packages/community/any/ttf-font-awesome/) （必选）
+Display current volume. The default sound card is `default`, you can change this option in `nord-config`.
 
-可选依赖：
+| Bind             | Event                |
+| ---------------- | -------------------- |
+| mouse left click | toggle mute          |
+| scroll up        | volume + 5% for each |
+| scroll down      | volume - 5% for each |
 
-1. [Weather Icon](https://github.com/erikflowers/weather-icons)（weather 组件需要）
-2. Dunst （notify 组件显示历史通知需要）
-3. redshift （backlight 开关 redshift 功能）
+### backlight
 
-前排提示，配合[官方wiki](https://github.com/polybar/polybar/wiki)食用口味更佳。
+Display current lightness of screen.
 
-# Modules
+| Bind             | Event                   |
+| ---------------- | ----------------------- |
+| scroll up        | lightness + 5% for each |
+| scroll down      | lightness - 5% for each |
+| mouse left click | toggle redshift         |
 
-## alsa
+### date
 
-显示当前音量，根据音量共有三种不同颜色图标。默认声卡选择为`default`，可以在`nord-config`里调整声卡选项。
+Display date and time.
 
-| 绑定     | 事件             |
-| -------- | ---------------- |
-| 鼠标左击 | 静音/恢复        |
-| 滚轮上   | 音量 +，每次 +5% |
-| 滚轮下   | 音量 -，每次 -5% |
+| Bind             | Event                           |
+| ---------------- | ------------------------------- |
+| mouse left click | switch between date/time format |
 
-## backlight
+### notify
 
-调整屏幕亮度。可选左击开关 redshift，需要提前配置好 redshift 或者修改 scripts/
+Notify icon.
 
-| 绑定   | 事件             |
-| ------ | ---------------- |
-| 滚轮上 | 亮度 +，每次 +5% |
-| 滚轮下 | 亮度 -，每次 -5% |
-
-## date
-
-显示时间。
-
-| 绑定     | 事件              |
-| -------- | ----------------- |
-| 鼠标左击 | 切换日期/时间显示 |
-
-## notify
-
-通知图标。
-
-| 绑定     | 事件                                                         |
+| Bind     | Event                                                         |
 | -------- | ------------------------------------------------------------ |
-| 鼠标左击 | 模拟 ctrl+grave，即默认的 dunst 历史快捷键，会被其他快捷键设定覆盖 |
+| mouse left click | key event `ctrl+grave`, the default hotkey for dunst history notify |
 
-## network-detail
+### network-detail
 
-显示上传及下载速度，单位为KB/s，需要在`nord-config`中`interface`字段设置自己的 interface。
+Display upload and download speed in KB/s. Need to set your network interface at `nord-config.interface`.
 
-## network-short
+### network-short
 
-显示网络连接图标，图标颜色代表网络连接延迟程度，颜色越偏红说明延迟越高。
+Display network connection icon. By defailt left click on the icon will call `networkmanager-dmenu`. For more details of this you can check [networkmanager-dmenu](https://github.com/firecat53/networkmanager-dmenu).
 
-## battery
+| Bind     | Event                 |
+|:---------|:---------------------|
+| mouse left click | networkmanager-dmenu |
 
-显示电池信息，需要在`nord-config`中设置`battery-full-at`、`battery-bat`以及`battery-adp`字段。
 
-## keyboard
+### battery
 
-显示键盘大写锁定。因为使用的键盘没有 NumLock，所以暂时不支持，如果需要可以自行添加。
+Display battery infomation. Requires to set `nord-config.battery-full-at`, `nord-config.battery-bat` and `nord-config.battery-adp`.
 
-## systray
+### keyboard
 
-显示系统托盘。我的系统是 Manjaro i3 社区版，i3 版本 4.16.1，polybar 版本 3.4.0，按照如此配置没有产生显示错误。如果遇到问题可以到官方 issue 中查找，有图标问题的人挺多的。
+Display keyboard CapsLock indicator.
 
-## mpd
+### mpd
 
-显示 mpd 信息，当 mpd 进程不存在时隐藏。总共有三种显示方式，分别为**播放中**、**暂停**以及**停止**。
+Display mpd information. It is hidden when mpd process does not running. There are three layout corresponding to **play**, **pause** and **stop**.
 
-- 播放状态下显示全部内容，包括*暂停*、*上一首*、*歌手 - 歌名*、*下一首*、*停止*、*进度条*、*列表循环*以及*列表随机*。
-- 暂停状态下显示部分内容，包括*播放*、*上一首*、*歌手 - 歌名*、*下一首*、*停止*。
-- 停止状态下仅显示*播放*。
+- Display full content when in play status, including *pause*, *prev*, *artist - song*, *next*, *stop*, *progress bar*, *cycle* and *random*.
+- Display part of the content when in pause status, including *play*, *prev*, *artist - song*, *next*, *stop*.
+- Display *play* only in stop status.
 
-需要在`nord-config`中设置`mpd-host`及`mpd-port`。
+Requires `nord-config.mpd-host` and `nord-config.mpd-port`.
 
-## i3
+### i3
 
-显示 i3 workspace 图标，图标可在`nord-top`中定义。
+Display i3 workspace icon. Icon list can be customized in `nord-top`.
 
-| 绑定     | 事件                     |
+| Bind     | Event                     |
 | -------- | ------------------------ |
-| 鼠标左击 | i3-msg workspace <index> |
-| 滚轮上   | i3-msg workspace prev    |
-| 滚轮下   | i3-msg workspace next    |
+| mouse left click | i3-msg workspace <index> |
+| scroll up   | i3-msg workspace prev    |
+| scroll down   | i3-msg workspace next    |
 
-## workspace-name
+### workspace-name
 
-显示当前 workspace 名字，在 i3 的配置文件处定义，格式为 `index:name`，例如`1:Home`。
+Display the name of current workspace which is defined in the configuration of i3. The format should be `index:identifier`, for example `1:Home`.
 
-## weather
+### title
 
-显示 Openweather 天气信息，使用的脚本来自于[polybar/polybar-scripts/openweather-fullfeatured](https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/openweathermap-fullfeatured)，需要个人API及城市代码，在脚本中设置，具体情况可查看项目 Readme。
+Display the title of current active window.
 
-## info-hackspeed
+### weather
 
-显示每分钟输入速度，单位默认为 cpm (char per minute)，可选 wpm (word per minute)，在脚本中设置。来自于[polybar/polybar-scripts/info-hackspeed](https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/info-hackspeed)。
+Display weather information from Openweather with scripts [polybar/polybar-scripts/openweather-fullfeatured](https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/openweathermap-fullfeatured). Personal API and city code is required. For more detailed usage check the project's README.
 
-## daily-poem
+### info-hackspeed
 
-显示今日诗词，使用了 V友@lhx2008 分享的[今日诗词 API](https://www.jinrishici.com/)，支持显示诗词推荐、来源以及匹配标签。使用需要获取 token，可到 https://v2.jinrishici.com/token 获取 token 后替换我在`nord-down`中的 token。
+Display the speed of inputting in cpm(char per minute) or wpm (word per minute). The script comes from [polybar/polybar-scripts/info-hackspeed](https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/info-hackspeed).
 
-| 内容                     | index      |
+### daily-poem
+
+Display Chese poem. The API is from [今日诗词 API](https://www.jinrishici.com/). Before usage you need to get your token from https://v2.jinrishici.com/token and replace mine in `nord-dowm`.
+
+| content                     | index      |
 | ----                     | -----      |
 | 日落，风                 | 2          |
 | 唐代·李白 宫中行乐词八首 | 1          |
-| 烟花宜落日，丝管醉春风   | 0 (初始值) |
+| 烟花宜落日，丝管醉春风   | 0 (initial value) |
 
-| 绑定         | 事件                |
+| Bind         | Event                |
 | --------     | ------------        |
-| 滚轮上       | index += 1          |
-| 滚轮下       | index -= 1          |
-| 鼠标左键双击 | 更新诗词并重置index |
+| scroll up       | index += 1          |
+| scroll down       | index -= 1          |
+| mouse left double click | update poem and reset index |
 
-## temperature
+### temperature
 
-显示温度，可在`nord-config`中设置`thermal-zone`，默认为0。当温度低于`base-temperature`时切换为最低温度显示，当温度高于`warn-temperature`时切换为警戒温度显示，温度图标颜色会根据温度在`base-temperature`到`warn-temperature`之间变化，根据自身情况设置合理的值即可。
+Display internal temperature. You can specify the thermal-zone in `nord-config.thermal-zone`, the default value is 0. When the temperature is lower than `nord-config.base-temperature` it will switch to lowest temperature layout; when the temperature is higher than `nord-config.warn-temperature` is will switch to warning temperature layout. The color of icon will change between `base-temperature` and `warn-temperature`, so set the proper values for your environment.
 
-## memory
+### memory
 
-显示内存使用情况，格式为 used/total。
+Display memory usage in the format used/total.
 
-## cpu
+### cpu
 
-显示 cpu 使用情况。
+Display CPU usage.
 
-## show-desktop
+### show-desktop
 
-显示桌面。默认是切换到`25:Desktop`，可在`nord-down`中调整。如果 i3wm 启动了 workspace back_and_forth 的话，两次左击可返回原来桌面。
+Display desktop. By default it will switch to `25:Desktop`. You can customize this in `nord-down`.
 
-| 绑定     | 事件                        |
+| Bind     | Event                        |
 | -------- | --------------------------- |
-| 鼠标左击 | i3-msg workspace 25:Desktop |
+| mouse left click | i3-msg workspace 25:Desktop |
