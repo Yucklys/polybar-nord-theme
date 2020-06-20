@@ -7,7 +7,7 @@ include-file = $HOME/.config/polybar/nord-config
 
 
 [bar/nord-top]
-monitor = ${env:MONITOR:eDP1}
+monitor = ${config.monitor}
 width = ${config.width}
 height = ${config.height}
 offset-x = ${config.offset-x}
@@ -26,6 +26,7 @@ padding-left = 0
 padding-right = 0
 
 override-redirect = ${config.override-redirect}
+wm-restack = ${config.wm-restack}
 
 module-margin = 1
 
@@ -49,7 +50,7 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/nord-down]
-monitor = ${env:MONITOR:eDP1}
+monitor = ${config.monitor}
 width = ${config.width}
 height = ${config.height}
 offset-x = ${config.offset-x}
@@ -66,6 +67,8 @@ foreground = ${colors.foreground}
 line-size = ${config.line-size}
 
 padding = 2
+override-redirect = ${config.override-redirect}
+wm-restack = ${config.wm-restack}
 
 module-margin = 2
 
