@@ -6,11 +6,11 @@ dpi = 192
 monitor = ${env:MONITOR:eDP-1}
 
 # bar position, apply globally
-width = 100%
+width = 100%:-100
 height = 3%
-offset-x = 0%
-offset-y = 0%
-radius = 0.0
+offset-x = 50
+offset-y = 24
+radius = 10.0
 
 fixed-center = true
 override-redirect = false
@@ -31,25 +31,27 @@ wm-restack = bspwm
 # title: title of the active window
 # network-detail: Download and upload speed 
 # weather: Display openweather info
+# powermenu: menu to control system power
 # info-hackspeed: Numper of characters clicked per minute
 # daily-poem: Display poem
 # temperature: Display internal temperature
 # memory: Display memory usage
 # cpu: Display cpu usage
 # show-desktop: Display desktop (i3 only)
+# clash-widget: showing clash service
 
 # Top modules
 top-left = bspwm title
 top-center = mpd
-top-right = keyboard backlight alsa battery network-short date
+top-right = keyboard clash-widget alsa battery network-short date
 
 # Bottom modules
-bottom-left = info-hackspeed
+bottom-left = powermenu info-hackspeed
 bottom-center = daily-poem
 bottom-right = temperature memory cpu
 
 systray-top = none
-systray-bottom = left
+systray-bottom = none
 
 # global style
 line-size = 6
