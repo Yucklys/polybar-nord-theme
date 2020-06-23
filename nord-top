@@ -297,12 +297,34 @@ ramp-signal-3-underline = ${colors.success}
 [module/clash-widget]
 type = custom/ipc
 
-hook-0 = ./scripts/clash.sh
-hook-1 = ./scripts/clash.sh toggle
+hook-0 = ~/.config/polybar/scripts/clash.sh
+hook-1 = ~/.config/polybar/scripts/clash.sh toggle
 
 initial = 1
 
 click-left = polybar-msg -p %pid% hook clash-widget 2
 click-right = polybar-msg -p %pid% hook clash-widget 1
 
-format-padding = 2
+[module/onedrive-widget]
+type = custom/ipc
+
+hook-0 = ~/.config/polybar/scripts/onedrive.sh
+hook-1 = ~/.config/polybar/scripts/onedrive.sh toggle
+
+initial = 1
+
+click-left = polybar-msg -p %pid% hook onedrive-widget 2
+click-right = polybar-msg -p %pid% hook onedrive-widget 1
+
+[module/clipmenu-widget]
+type = custom/ipc
+
+hook-0 = ~/.config/polybar/scripts/clipmenu.sh
+hook-1 = ~/.config/polybar/scripts/clipmenu.sh toggle
+hook-2 = ~/.config/polybar/scripts/clipmenu.sh menu
+
+initial = 1
+
+click-left = polybar-msg -p %pid% hook clipmenu-widget 3
+double-click-left = polybar-msg -p %pid% hook clipmenu-widget 2
+click-right = polybar-msg -p %pid% hook clipmenu-widget 1

@@ -1,4 +1,4 @@
-; vim:ft=dosini
+vim:ft=dosini
 
 [config]
 # DPI value for HiDPI screen
@@ -39,11 +39,13 @@ wm-restack = bspwm
 # cpu: Display cpu usage
 # show-desktop: Display desktop (i3 only)
 # clash-widget: showing clash service
+# onedrive-widget: showing onedrive service
+# clipmenu-widget: showing clipmenu service
 
 # Top modules
 top-left = bspwm title
 top-center = mpd
-top-right = keyboard clash-widget alsa battery network-short date
+top-right = keyboard clipmenu-widget onedrive-widget clash-widget alsa battery network-short date
 
 # Bottom modules
 bottom-left = powermenu info-hackspeed
@@ -51,7 +53,7 @@ bottom-center = daily-poem
 bottom-right = temperature memory cpu
 
 systray-top = none
-systray-bottom = none
+systray-bottom = left
 
 # global style
 line-size = 6
@@ -81,7 +83,7 @@ master-mixer = Master
 mpd-host = 127.0.0.1
 mpd-port = 6600
 
-thermal-zone = 10
+thermal-zone = 3
 # Base temperature for where to start the ramp (in degrees celsius)
 base-temperature = 20
 # Threshold temperature to display warning label (in degrees celsius)

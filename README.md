@@ -25,9 +25,12 @@ Required dependency:
 
 Optional dependency:
 
-1. [Weather Icon](https://github.com/erikflowers/weather-icons)（required by `weather` module to display weather icon）
-2. Dunst （required by `notify` module to display history notify）
-3. redshift （required by `backlight` module to toggle redshift service）
+1. [Weather Icon](https://github.com/erikflowers/weather-icons) (required by `weather` module)
+2. Dunst (required by `notify` module)
+3. redshift (required by `backlight` module)
+4. clash (required by `clash-widget` module)
+5. [onedrive](https://github.com/skilion/onedrive) (required by `onedrive-widget` module)
+6. [clipmenu](https://github.com/cdown/clipmenu/) (required by `clipmenu-widget` module)
 
 ### Install by `git clone` (recommand)
 
@@ -78,6 +81,7 @@ The directory contains all the scripts and files that required by the modules.
 8. [keyboard](#keyboard)
 10. [mpd](#mpd)
 11. [i3](#i3)
+11. [bspwm](#bspwm)
 12. [workspace-name](#workspace-name)
 13. [title](#title)
 14. [weather](#weather)
@@ -88,6 +92,10 @@ The directory contains all the scripts and files that required by the modules.
 19. [memory](#memory)
 20. [cpu](#cpu)
 21. [show-desktop](#show-desktop)
+22. [powermenu](#powermenu)
+23. [clash-widget](#clash-widget)
+24. [onedrive-widget](#onedrive-widget)
+25. [clipmenu-widget](#clipmenu-widget)
 
 ### alsa
 
@@ -166,6 +174,10 @@ Display i3 workspace icon. Icon list can be customized in `nord-top`.
 | scroll up   | i3-msg workspace prev    |
 | scroll down   | i3-msg workspace next    |
 
+### bspwm
+
+Display bspwm workspace icon.
+
 ### workspace-name
 
 Display the name of current workspace which is defined in the configuration of i3. The format should be `index:identifier`, for example `1:Home`.
@@ -217,3 +229,35 @@ Display desktop. By default it will switch to `25:Desktop`. You can customize th
 | Bind     | Event                        |
 | -------- | --------------------------- |
 | mouse left click | i3-msg workspace 25:Desktop |
+
+### powermenu
+
+List of power options, `shutdown`, `reboot` and `logout`.
+
+### clash-widget
+
+Require clash service. You can write by yourself or use mine in `systemd/clash.service`.
+
+| Bind              | Event          |
+| ----------------- | -------------- |
+| mouse left click  | toggle service |
+| mouse right click | update status  |
+
+### onedrive-widget
+
+Require [onedrive](https://github.com/skilion/onedrive).
+
+| Bind              | Event          |
+| ----------------- | -------------- |
+| mouse left click  | toggle service |
+| mouse right click | update status  |
+
+### ### clipmenu-widget
+
+Require [clipmenu](https://github.com/cdown/clipmenu/).
+
+| Bind              | Event          |
+| ----------------- | -------------- |
+| mouse left click  | trigger menu   |
+| double left click | toggle service |
+| mouse right click | update status  |
