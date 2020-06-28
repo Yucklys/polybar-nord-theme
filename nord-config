@@ -6,11 +6,11 @@ dpi = 192
 monitor = ${env:MONITOR:eDP-1}
 
 # bar position, apply globally
-width = 100%:-100
+width = 100%
 height = 3%
-offset-x = 50
-offset-y = 24
-radius = 10.0
+offset-x = 0
+offset-y = 0
+radius = 0.0
 
 fixed-center = true
 override-redirect = false
@@ -48,12 +48,12 @@ top-center = mpd
 top-right = keyboard clipmenu-widget onedrive-widget clash-widget alsa battery network-short date
 
 # Bottom modules
-bottom-left = powermenu info-hackspeed
+bottom-left = powermenu info-hackspeed weather
 bottom-center = daily-poem
-bottom-right = temperature memory cpu
+bottom-right = temperature
 
 systray-top = none
-systray-bottom = left
+systray-bottom = right
 
 # global style
 line-size = 6
