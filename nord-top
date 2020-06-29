@@ -295,36 +295,26 @@ ramp-signal-3-foreground = ${colors.success}
 ramp-signal-3-underline = ${colors.success}
 
 [module/clash-widget]
-type = custom/ipc
+type = custom/script
 
-hook-0 = ~/.config/polybar/scripts/clash.sh
-hook-1 = ~/.config/polybar/scripts/clash.sh toggle
+exec = ~/.config/polybar/scripts/clash.sh
+interval = 0
 
-initial = 1
-
-click-left = polybar-msg -p %pid% hook clash-widget 2
-click-right = polybar-msg -p %pid% hook clash-widget 1
+click-left = ~/.config/polybar/scripts/clash.sh toggle
 
 [module/onedrive-widget]
-type = custom/ipc
+type = custom/script
 
-hook-0 = ~/.config/polybar/scripts/onedrive.sh
-hook-1 = ~/.config/polybar/scripts/onedrive.sh toggle
+exec = ~/.config/polybar/scripts/onedrive.sh
+interval = 0
 
-initial = 1
-
-click-left = polybar-msg -p %pid% hook onedrive-widget 2
-click-right = polybar-msg -p %pid% hook onedrive-widget 1
+click-left = ~/.config/polybar/scripts/onedrive.sh toggle
 
 [module/clipmenu-widget]
-type = custom/ipc
+type = custom/script
 
-hook-0 = ~/.config/polybar/scripts/clipmenu.sh
-hook-1 = ~/.config/polybar/scripts/clipmenu.sh toggle
-hook-2 = ~/.config/polybar/scripts/clipmenu.sh menu
+exec = ~/.config/polybar/scripts/clipmenu.sh
+interval = 0
 
-initial = 1
-
-click-left = polybar-msg -p %pid% hook clipmenu-widget 3
-double-click-left = polybar-msg -p %pid% hook clipmenu-widget 2
-click-right = polybar-msg -p %pid% hook clipmenu-widget 1
+click-left = ~/.config/polybar/scripts/clipmenu.sh menu
+click-right = ~/.config/polybar/scripts/clipmenu.sh toggle

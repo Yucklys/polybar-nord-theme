@@ -45,7 +45,7 @@ wm-restack = bspwm
 # Top modules
 top-left = bspwm title
 top-center = mpd
-top-right = keyboard clipmenu-widget onedrive-widget clash-widget alsa battery network-short date
+top-right = keyboard clipmenu-widget onedrive-widget clash-widget alsa network-short battery date
 
 # Bottom modules
 bottom-left = powermenu info-hackspeed weather

@@ -8,10 +8,10 @@ case $1 in
 	"toggle")
 		if [ $service == 'active' ]
 		then
-			systemctl stop --user clash
+			systemctl stop --user onedrive
 			printf '%s' '%{F#4c566a}%{F-}'
 		else
-			systemctl start --user clash
+			systemctl start --user onedrive
 			printf '%s' '%{F#a3be8c}%{F-}'
 		fi
 		;;

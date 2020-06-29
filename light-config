@@ -5,8 +5,8 @@ include-file = $HOME/.config/polybar/nord-top
 include-file = $HOME/.config/polybar/nord-down
 include-file = $HOME/.config/polybar/nord-config
 
-
-[bar/nord-top]
+[bar/base]
+theme = light
 monitor = ${config.monitor}
 width = ${config.width}
 height = ${config.height}
@@ -22,12 +22,21 @@ foreground = ${colors.foreground}
 
 line-size = ${config.line-size}
 
-padding-left = 0
-padding-right = 0
-
+padding = 0
 override-redirect = ${config.override-redirect}
 wm-restack = ${config.wm-restack}
 
+tray-padding = 3
+tray-detached = false
+tray-maxsize = 22
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+
+[bar/nord-top]
+inherit = bar/base
 module-margin = 1
 
 font-0 = FiraCodeRegular:pixelsize=12
@@ -41,36 +50,12 @@ modules-center = ${config.top-center}
 modules-right = ${config.top-right}
 
 tray-position = ${config.systray-top}
-tray-padding = 0
-tray-detached = false
-tray-maxsize = 30
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-enable-ipc = true
 
 [bar/nord-down]
-monitor = ${config.monitor}
-width = ${config.width}
-height = ${config.height}
-offset-x = ${config.offset-x}
-offset-y = ${config.offset-y}
-radius = ${config.radius}
-
-fixed-center = ${config.fixed-center}
+inherit = bar/base
 bottom = true
-dpi = ${config.dpi}
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = ${config.line-size}
 
 padding = 2
-override-redirect = ${config.override-redirect}
-wm-restack = ${config.wm-restack}
-
 module-margin = 2
 
 font-0 = FiraCodeRegular:pixelsize=12
@@ -85,12 +70,4 @@ modules-center = ${config.bottom-center}
 modules-right = ${config.bottom-right}
 
 tray-position = ${config.systray-bottom}
-tray-padding = 3
-tray-detached = false
-tray-maxsize = 22
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-enable-ipc = true
 
