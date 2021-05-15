@@ -57,7 +57,6 @@ inherit = bar/base
 
 bottom = true
 
-padding = 2
 module-margin = 2
 
 font-0 = WenQuanYiMicroHei:size=12

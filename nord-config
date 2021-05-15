@@ -1,4 +1,4 @@
-vim:ft=dosini
+;vim:ft=dosini
 
 [config]
 # DPI value for HiDPI screen
@@ -43,7 +43,7 @@ wm-restack = bspwm
 # clipmenu-widget: showing clipmenu service
 
 # Top modules
-top-left = bspwm title
+top-left = rofi-run bspwm title
 top-center = mpd
 top-right = keyboard clipmenu-widget onedrive-widget clash-widget alsa network-short battery date
 

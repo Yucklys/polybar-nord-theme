@@ -50,12 +50,17 @@ label-separator-foreground = ${colors.buffer}
 [module/bspwm]
 type = internal/bspwm
 
-ws-icon-0 = 0;
-ws-icon-1 = 1;
-ws-icon-2 = 2;
-ws-icon-3 = 3;
-ws-icon-4 = 4;
-ws-icon-5 = 5;
+ws-icon-0 = ;
+ws-icon-1 = ;
+ws-icon-2 = ;
+ws-icon-3 = ;
+ws-icon-4 = ;
+ws-icon-5 = ;
+ws-icon-6 = ;
+ws-icon-7 = ;
+ws-icon-8 = ;
+ws-icon-9 = ;
+
 
 label-focused = %icon%
 label-focused-underline = ${colors.nord7}
@@ -318,3 +323,13 @@ interval = 0
 
 click-left = ~/.config/polybar/scripts/clipmenu.sh menu
 click-right = ~/.config/polybar/scripts/clipmenu.sh toggle
+
+[module/rofi-run]
+type = custom/text
+
+content = 
+content-background = ${colors.nord9}
+content-foreground = ${colors.background}
+content-padding = 3
+
+click-left = ~/.config/polybar/scripts/rofi_run

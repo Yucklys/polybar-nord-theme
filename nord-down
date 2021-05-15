@@ -5,7 +5,13 @@ type = custom/menu
 expand-right = true
 
 label-open = 
-label-close =  |
+label-open-foreground = ${colors.background}
+label-open-background = ${colors.nord9}
+label-open-padding = 3
+label-close = 
+label-close-foreground = ${colors.background}
+label-close-background = ${colors.nord9}
+label-close-padding = 4
 
 menu-0-0 = 
 menu-0-0-foreground = ${colors.urgent}
@@ -15,10 +21,10 @@ menu-0-1 = 
 menu-0-1-foreground = ${colors.warning}
 menu-0-1-padding = 2
 menu-0-1-exec = reboot
-menu-0-2 = 
+menu-0-2 = 
 menu-0-2-foreground = ${colors.warning}
 menu-0-2-padding = 2
-menu-0-2-exec = logout
+menu-0-2-exec = systemctl suspend
 
 [module/cpu]
 type = internal/cpu
@@ -72,8 +78,8 @@ label =  %notifications%
 [module/daily-poem]
 type = custom/ipc
 
-# replace B25KQR2Z50dxWG2oLX+PfPG5OqP/BG4s with your token from https://v2.jinrishici.com/token.
-hook-0 = ~/.config/polybar/scripts/daily-poem require B25KQR2Z50dxWG2oLX+PfPG5OqP/BG4s ~/.config/polybar/scripts/poem.txt
+# replace 7UfdzOWorOAHZHcsxFQl2Ufa/7E9BtdT with your token from https://v2.jinrishici.com/token.
+hook-0 = ~/.config/polybar/scripts/daily-poem require 7UfdzOWorOAHZHcsxFQl2Ufa/7E9BtdT ~/.config/polybar/scripts/poem.txt
 hook-1 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt plus
 hook-2 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt minus
 
