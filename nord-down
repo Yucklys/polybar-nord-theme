@@ -134,6 +134,8 @@ ramp-2-foreground = ${colors.success}
 ramp-3-foreground = ${colors.success}
 ramp-4-foreground = ${colors.warning}
 
+interval = 10
+
 [module/info-hackspeed]
 type = custom/script
 exec = ~/.config/polybar/scripts/info-hackspeed.sh

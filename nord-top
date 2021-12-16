@@ -50,16 +50,16 @@ label-separator-foreground = ${colors.buffer}
 [module/bspwm]
 type = internal/bspwm
 
-ws-icon-0 = ;
-ws-icon-1 = ;
-ws-icon-2 = ;
-ws-icon-3 = ;
-ws-icon-4 = ;
-ws-icon-5 = ;
-ws-icon-6 = ;
-ws-icon-7 = ;
-ws-icon-8 = ;
-ws-icon-9 = ;
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-7 = VIII;
+ws-icon-8 = IX;
+ws-icon-9 = X;
 
 
 label-focused = %icon%
@@ -303,7 +303,7 @@ ramp-signal-3-underline = ${colors.success}
 type = custom/script
 
 exec = ~/.config/polybar/scripts/clash.sh
-interval = 0
+interval = 3
 
 click-left = ~/.config/polybar/scripts/clash.sh toggle
 
@@ -311,7 +311,7 @@ click-left = ~/.config/polybar/scripts/clash.sh toggle
 type = custom/script
 
 exec = ~/.config/polybar/scripts/onedrive.sh
-interval = 0
+interval = 3
 
 click-left = ~/.config/polybar/scripts/onedrive.sh toggle
 
@@ -319,7 +319,7 @@ click-left = ~/.config/polybar/scripts/onedrive.sh toggle
 type = custom/script
 
 exec = ~/.config/polybar/scripts/clipmenu.sh
-interval = 0
+interval = 3
 
 click-left = ~/.config/polybar/scripts/clipmenu.sh menu
 click-right = ~/.config/polybar/scripts/clipmenu.sh toggle

@@ -1,2 +1,2 @@
 #!/bin/sh
-rofi -show run -theme $HOME/.config/polybar/scripts/themes/dmenu.rasi
+rofi -show run -theme nord-oneline

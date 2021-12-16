@@ -31,6 +31,7 @@ Optional dependency:
 4. clash (required by `clash-widget` module)
 5. [onedrive](https://github.com/skilion/onedrive) (required by `onedrive-widget` module)
 6. [clipmenu](https://github.com/cdown/clipmenu/) (required by `clipmenu-widget` module)
+7. [nord-oneline](https://github.com/lr-tech/rofi-themes-collection) (required by `rofi-run` module)
 
 ### Install by `git clone` (recommand)
 
@@ -55,11 +56,11 @@ The color for dark and light theme. You don't need to edit these flies unless yo
 
 ### `dark-config` and `light-config`
 
-The config files for dark and light theme. Most of the settings are covered by `nord-config` except font settings. You can change the font setting in these files.
+The configuration for dark and light theme. Most of the settings are covered by `nord-config` except font settings. You can change the font setting in these files.
 
 ### `nord-config`
 
-The global config file. You can customize the position of the bars, DPI setting, modules, etc. The detailed help messages are in the comment for each option.
+The global configuration. You can customize the position of the bars, DPI setting, modules, etc. The detailed help messages are in the comment for each option.
 
 ### `nord-top` and `nord-down`
 
@@ -96,6 +97,7 @@ The directory contains all the scripts and files that required by the modules.
 23. [clash-widget](#clash-widget)
 24. [onedrive-widget](#onedrive-widget)
 25. [clipmenu-widget](#clipmenu-widget)
+26. [rofi-run](#rofi-run)
 
 ### alsa
 
@@ -252,7 +254,7 @@ Require [onedrive](https://github.com/skilion/onedrive).
 | mouse left click  | toggle service |
 | mouse right click | update status  |
 
-### ### clipmenu-widget
+### clipmenu-widget
 
 Require [clipmenu](https://github.com/cdown/clipmenu/).
 
@@ -261,3 +263,9 @@ Require [clipmenu](https://github.com/cdown/clipmenu/).
 | mouse left click  | trigger menu   |
 | double left click | toggle service |
 | mouse right click | update status  |
+
+### nord-oneline
+
+One-line style program runner. It will cover the top panel by left click the icon.
+
+![rofi-run](https://github.com/Yucklys/polybar-nord-theme/raw/master/screenshots/rofi-run.png)
