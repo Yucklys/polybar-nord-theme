@@ -202,9 +202,17 @@ ramp-headphones-0 = 
 ramp-volume-foreground = ${colors.nord7}
 
 [module/backlight]
-type = internal/xbacklight
+type = internal/backlight
+
+card = intel_backlight
 
 enable-scroll = true
+
+; Use xbacklight when the default backlight does not work.
+; For more details check https://github.com/polybar/polybar/wiki/Module:-xbacklight.
+; [module/backlight]
+; type = internal/xbacklight
+; enable-scroll = true
 
 ; Format
 format = <ramp> <label>
