@@ -307,7 +307,7 @@ ramp-signal-2-underline = ${colors.nord7}
 ramp-signal-3-foreground = ${colors.success}
 ramp-signal-3-underline = ${colors.success}
 
-module/spotify]
+[module/spotify]
 type = custom/script
 interval = 1
 format-prefix = " "
