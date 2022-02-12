@@ -40,9 +40,9 @@ inherit = bar/base
 module-margin = 1
 
 font-0 = FiraCodeRegular:pixelsize=12
-font-1 = FontAwesome5FreeSolid:pixelsize=12;1
-font-2 = FontAwesome5FreeRegular:pixelsize=12;1
-font-3 = FontAwesome5Brands:pixelsize=8;1
+font-1 = FontAwesome6FreeSolid:pixelsize=12;1
+font-2 = FontAwesome6FreeRegular:pixelsize=12;1
+font-3 = FontAwesome6Brands:pixelsize=8;1
 font-4 = WenQuanYiMicroHei:size=12
 
 modules-left = ${config.top-left}
@@ -59,9 +59,9 @@ padding = 2
 module-margin = 2
 
 font-0 = FiraCodeRegular:pixelsize=12
-font-1 = FontAwesome5FreeSolid:pixelsize=12;1
-font-2 = FontAwesome5FreeRegular:pixelsize=12;1
-font-3 = FontAwesome5Brands:pixelsize=8;1
+font-1 = FontAwesome6FreeSolid:pixelsize=12;1
+font-2 = FontAwesome6FreeRegular:pixelsize=12;1
+font-3 = FontAwesome6Brands:pixelsize=8;1
 font-4 = Weather Icons:style=Regular:size=12;1
 font-5 = WenQuanYiMicroHei:size=12
 
