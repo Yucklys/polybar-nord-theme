@@ -81,9 +81,10 @@ The directory contains all the scripts and files that required by the modules.
 7. [battery](#battery)
 8. [keyboard](#keyboard)
 10. [mpd](#mpd)
-11. [i3](#i3)
-11. [bspwm](#bspwm)
-12. [workspace-name](#workspace-name)
+11. [spotify](#spotify)
+12. [i3](#i3)
+13. [bspwm](#bspwm)
+14. [workspace-name](#workspace-name)
 13. [title](#title)
 14. [weather](#weather)
 15. [info-hackspeed](#info-hackspeed)
@@ -166,6 +167,10 @@ Display mpd information. It is hidden when mpd process does not running. There a
 
 Requires `nord-config.mpd-host` and `nord-config.mpd-port`.
 
+### spotify
+
+Display currently playing spotify song title.
+
 ### i3
 
 Display i3 workspace icon. Icon list can be customized in `nord-top`.
@@ -198,19 +203,13 @@ Display the speed of inputting in cpm(char per minute) or wpm (word per minute).
 
 ### daily-poem
 
-Display Chese poem. The API is from [今日诗词 API](https://www.jinrishici.com/). Before usage you need to get your token from https://v2.jinrishici.com/token and replace mine in `nord-dowm`.
+Display Chese poem. The API is from [今日诗词 API](https://www.jinrishici.com/). ~~Before usage you need to get your token from https://v2.jinrishici.com/token and replace mine in `nord-down`~~.
 
-| content                     | index      |
-| ----                     | -----      |
-| 日落，风                 | 2          |
-| 唐代·李白 宫中行乐词八首 | 1          |
-| 烟花宜落日，丝管醉春风   | 0 (initial value) |
+You can use this module without any configuration, but if you want to customize the output format, you can change the command in `nord-down`. For help on the command, `scripts/daily-poem -h` will list all the options for you.
 
-| Bind         | Event                |
-| --------     | ------------        |
-| scroll up       | index += 1          |
-| scroll down       | index -= 1          |
-| mouse left double click | update poem and reset index |
+#### Providers
+- 今日诗词(jrsc)
+- ...
 
 ### temperature
 

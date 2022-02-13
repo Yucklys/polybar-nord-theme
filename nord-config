@@ -3,6 +3,7 @@
 [config]
 # DPI value for HiDPI screen
 dpi = 192
+# Main monitor, default to MONITOR environment variable.
 monitor = ${env:MONITOR:eDP-1}
 
 # bar position, apply globally
@@ -25,6 +26,7 @@ wm-restack = bspwm
 # battery: Battery info
 # keyboard: CapsLock indicator
 # mpd: mpd status and controls
+# spotify: spotify information
 # i3: i3 workspace icons
 # bspwm: bspwm workspace icons
 # workspace-name: i3 current workspace name, need to be in the format like "1:Home"

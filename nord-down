@@ -78,16 +78,18 @@ label =  %notifications%
 [module/daily-poem]
 type = custom/ipc
 
-# replace 7UfdzOWorOAHZHcsxFQl2Ufa/7E9BtdT with your token from https://v2.jinrishici.com/token.
-hook-0 = ~/.config/polybar/scripts/daily-poem require 7UfdzOWorOAHZHcsxFQl2Ufa/7E9BtdT ~/.config/polybar/scripts/poem.txt
-hook-1 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt plus
-hook-2 = ~/.config/polybar/scripts/daily-poem get ~/.config/polybar/scripts/poem.txt minus
+# Check `~/.config/polybar/scripts/daily-poem -h` for more help information
+hook-0 = ~/.config/polybar/scripts/daily-poem -p jrsc -u content
+hook-1 = ~/.config/polybar/scripts/daily-poem -p jrsc dynasty author title --sep " / "
+hook-2 = ~/.config/polybar/scripts/daily-poem -p jrsc matches
+hook-3 = ~/.config/polybar/scripts/daily-poem -p jrsc content
 
 initial = 1
 
 scroll-up = polybar-msg -p %pid% hook daily-poem 2
 scroll-down = polybar-msg -p %pid% hook daily-poem 3
-double-click-left = polybar-msg -p %pid% hook daily-poem 1
+click-left = polybar-msg -p %pid% hook daily-poem 4
+click-right = polybar-msg -p %pid% hook daily-poem 1
 
 format-underline = ${colors.nord7}
 
