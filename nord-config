@@ -95,6 +95,9 @@ warn-temperature = 70
 # where select at least `notifications` option
 github-token = 00ed987a6d7efd532c5b4ca0849c2803228d1b5d
 
+# mullvad module setting
+mullvad-click-left = mullvad-vpn
+
 # notify module setting
 notify-click-left = xdotool key control+grave
 

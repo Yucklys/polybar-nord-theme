@@ -353,3 +353,12 @@ content-foreground = ${colors.background}
 content-padding = 3
 
 click-left = ~/.config/polybar/scripts/rofi_run
+
+[module/mullvad-status]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/mullvad.sh
+interval = 5
+
+click-left = ${config.mullvad-click-left}
+
