@@ -1,21 +1,21 @@
 ; vim:ft=dosini
 [global-wm]
-include-file = $HOME/.config/polybar/dark-colors
-include-file = $HOME/.config/polybar/nord-top
-include-file = $HOME/.config/polybar/nord-down
-include-file = $HOME/.config/polybar/nord-config
+include-file = ../colors/dark-colors
+include-file = ../nord-top
+include-file = ../nord-down
+include-file = ../nord-config
 
 [bar/base]
 theme = dark
-monitor = ${config.monitor}
+monitor = ${config.monitor:}
 width = ${config.width}
 height = ${config.height}
 offset-x = ${config.offset-x}
 offset-y = ${config.offset-y}
 radius = ${config.radius}
 
-fixed-center = ${config.fixed-center}
-dpi = ${config.dpi}
+fixed-center = ${config.fixed-center:true}
+dpi = ${config.dpi:0}
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -23,8 +23,8 @@ foreground = ${colors.foreground}
 line-size = ${config.line-size}
 
 padding = 0
-override-redirect = ${config.override-redirect}
-wm-restack = ${config.wm-restack}
+override-redirect = ${config.override-redirect:false}
+wm-restack = ${config.wm-restack:generic}
 
 tray-padding = 3
 tray-detached = false

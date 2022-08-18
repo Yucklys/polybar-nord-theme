@@ -1,10 +1,14 @@
 ;vim:ft=dosini
 
 [config]
+# -------------------------------------------
+# Bar Settings
+# -------------------------------------------
+
 # DPI value for HiDPI screen
-dpi = 192
+# dpi = 192
 # Main monitor, default to MONITOR environment variable.
-monitor = ${env:MONITOR:eDP-1}
+# monitor = ${env:MONITOR:eDP-1}
 
 # bar position, apply globally
 width = 100%
@@ -12,15 +16,23 @@ height = 3%
 offset-x = 0
 offset-y = 0
 radius = 0.0
+# When true, the centered module will stay at the middle of the screen
+# whenever possible.
+# When false, the centered module will be placed between the left and right
+# block.
+# fixed-center = true
 
 # if you are using bspwm and experiencing weird bar positioning,
 # you can uncomment the following lines and restart the bar to see
 # if the problem is solved.
-fixed-center = true
-override-redirect = false
-wm-restack = bspwm
+# If problem still persist, look at Polybar's wiki for more options.
+# override-redirect = false
+# wm-restack = bspwm
 
-# module list:
+# -------------------------------------------
+# Modules
+# -------------------------------------------
+
 # alsa: Display current volume for alsa device
 # pulseaudio: Display current volume for pulseaudio
 # backlight: Display screen brightness
@@ -48,30 +60,59 @@ wm-restack = bspwm
 # onedrive-widget: showing onedrive service
 # clipmenu-widget: showing clipmenu service
 # logseq-sync: Syncing logseq folder by git
+# mullvad-status: showing mullvad status
 
 # Top modules
 top-left = rofi-run bspwm title
 top-center = mpd
-top-right = keyboard logseq-sync clipmenu-widget onedrive-widget clash-widget pulseaudio network-short battery date
+top-right = keyboard clipmenu-widget onedrive-widget clash-widget pulseaudio network-short battery date
 
 # Bottom modules
 bottom-left = powermenu info-hackspeed weather
 bottom-center = daily-poem
 bottom-right = temperature
 
+# Position of tray icons. Avaliable options are left/center/right and none.
+# If the tray is put at the bottom bar, then systray-top must set to none, and vice versa.
 systray-top = none
 systray-bottom = right
 
-# global style
+# -------------------------------------------
+# Styles
+# -------------------------------------------
+
+# Under-/overline pixel size
 line-size = 6
 
-# Modules configure option
+# -------------------------------------------
+# Modules Configurations
+# -------------------------------------------
+
+## workspace icons
+# Format is {identifier};{icon}, where identifier is the name of the workspace,
+# and icon is the label to be displayed.
+# If no icon is provided, {identifier} will be used as label.
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-7 = VIII;
+ws-icon-8 = IX;
+ws-icon-9 = X;
+# default icon used if not specified.
+ws-icon-default = 
+
+## network-short
 # the default value in this section should work in most cases,
 # if some of them doesn't suit your environment, you can change
 # it from here.
 # network interface, check by `ip link show`
 interface = wlan0
 
+## battery
 # when the current battery capacity excess this value,
 # the full-capacity format will be displayed.
 battery-full-at = 95
@@ -80,36 +121,38 @@ battery-full-at = 95
 battery-bat = BAT0
 battery-adp = AC
 
+## alsa/pulseaudio
 # soundcard setting
 master-soundcard = default
 speaker-soundcard = default
 headphone-soundcard = default
 master-mixer = Master
 
+## mpd
 # mpd service connection setting
 mpd-host = 127.0.0.1
 mpd-port = 6600
 
+## temperature
 thermal-zone = 3
 # Base temperature for where to start the ramp (in degrees celsius)
 base-temperature = 20
 # Threshold temperature to display warning label (in degrees celsius)
 warn-temperature = 70
 
-# GitHub personal token, generate from https://github.com/settings/tokens/new?scopes=notifications&description=Notifier+for+Polybar
-# where select at least `notifications` option
-github-token = 00ed987a6d7efd532c5b4ca0849c2803228d1b5d
+## github
+# GitHub personal token. Select at least `notifications` option.
+github-token = ${env:GITHUB_ACCESS_TOKEN}
 
+## mullvad-status
 # mullvad module setting
 mullvad-click-left = mullvad-vpn
 
+## notify
 # notify module setting
 notify-click-left = xdotool key control+grave
 
-# network module setting
-network-click-left = i3-msg workspace 2
-
-# i3
+## i3
 # Only show workspaces defined on the same output as the bar
 #
 # Useful if you want to show monitor specific workspaces

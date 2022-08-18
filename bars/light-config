@@ -1,21 +1,21 @@
 ; vim:ft=dosini
 [global-wm]
-include-file = $HOME/.config/polybar/light-colors
-include-file = $HOME/.config/polybar/nord-top
-include-file = $HOME/.config/polybar/nord-down
-include-file = $HOME/.config/polybar/nord-config
+include-file = ../colors/light-colors
+include-file = ../nord-top
+include-file = ../nord-down
+include-file = ../nord-config
 
 [bar/base]
 theme = light
-monitor = ${config.monitor}
+monitor = ${config.monitor:}
 width = ${config.width}
 height = ${config.height}
 offset-x = ${config.offset-x}
 offset-y = ${config.offset-y}
 radius = ${config.radius}
 
-fixed-center = ${config.fixed-center}
-dpi = ${config.dpi}
+fixed-center = ${config.fixed-center:true}
+dpi = ${config.dpi:0}
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -23,8 +23,8 @@ foreground = ${colors.foreground}
 line-size = ${config.line-size}
 
 padding = 0
-override-redirect = ${config.override-redirect}
-wm-restack = ${config.wm-restack}
+override-redirect = ${config.override-redirect:false}
+wm-restack = ${config.wm-restack:generic}
 
 tray-padding = 3
 tray-detached = false
@@ -37,13 +37,14 @@ enable-ipc = true
 
 [bar/nord-top]
 inherit = bar/base
+
 module-margin = 1
 
-font-0 = FiraCodeRegular:pixelsize=12
+font-0 = WenQuanYiMicroHei:size=12
 font-1 = FontAwesome6FreeSolid:pixelsize=12;1
 font-2 = FontAwesome6FreeRegular:pixelsize=12;1
 font-3 = FontAwesome6Brands:pixelsize=8;1
-font-4 = WenQuanYiMicroHei:size=12
+font-4 = FiraCodeRegular:pixelsize=12
 
 modules-left = ${config.top-left}
 modules-center = ${config.top-center}
@@ -53,21 +54,19 @@ tray-position = ${config.systray-top}
 
 [bar/nord-down]
 inherit = bar/base
+
 bottom = true
 
-padding = 2
 module-margin = 2
 
-font-0 = FiraCodeRegular:pixelsize=12
+font-0 = WenQuanYiMicroHei:size=12
 font-1 = FontAwesome6FreeSolid:pixelsize=12;1
-font-2 = FontAwesome6FreeRegular:pixelsize=12;1
-font-3 = FontAwesome6Brands:pixelsize=8;1
-font-4 = Weather Icons:style=Regular:size=12;1
-font-5 = WenQuanYiMicroHei:size=12
+font-2 = FontAwesome6Brands:pixelsize=8;1
+font-3 = Weather Icons:style=Regular:size=12;1
+font-4 = FiraCodeRegular:pixelsize=12
 
 modules-left = ${config.bottom-left}
 modules-center = ${config.bottom-center}
 modules-right = ${config.bottom-right}
 
 tray-position = ${config.systray-bottom}
-
