@@ -388,3 +388,11 @@ content-foreground = ${colors.success}
 content-padding = 1
 content-left = git -C /home/yucklys/OneDrive/logseq push
 content-right = git -C /home/yucklys/OneDrive/logseq pull -ff
+
+[module/mullvad-status]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/mullvad.sh
+interval = 5
+
+click-left = ${config.mullvad-click-left}
