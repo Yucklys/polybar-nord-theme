@@ -20,14 +20,14 @@ radius = 0.0
 # whenever possible.
 # When false, the centered module will be placed between the left and right
 # block.
-# fixed-center = true
+fixed-center = true
 
 # if you are using bspwm and experiencing weird bar positioning,
 # you can uncomment the following lines and restart the bar to see
 # if the problem is solved.
 # If problem still persist, look at Polybar's wiki for more options.
-# override-redirect = false
-# wm-restack = bspwm
+override-redirect = false
+wm-restack = bspwm
 
 # -------------------------------------------
 # Modules

@@ -14,7 +14,7 @@ offset-x = ${config.offset-x}
 offset-y = ${config.offset-y}
 radius = ${config.radius}
 
-fixed-center = ${config.fixed-center:true}
+fixed-center = ${config.fixed-center}
 dpi = ${config.dpi:0}
 
 background = ${colors.background}
@@ -23,8 +23,8 @@ foreground = ${colors.foreground}
 line-size = ${config.line-size}
 
 padding = 0
-override-redirect = ${config.override-redirect:false}
-wm-restack = ${config.wm-restack:generic}
+override-redirect = ${config.override-redirect}
+wm-restack = ${config.wm-restack}
 
 tray-padding = 3
 tray-detached = false
