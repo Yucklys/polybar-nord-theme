@@ -65,7 +65,7 @@ radius = 0.0
 # Top modules
 top-left = rofi-run bspwm title
 top-center = mpd
-top-right = keyboard clipmenu-widget onedrive-widget clash-widget pulseaudio network-short battery date
+top-right = keyboard logseq-sync clipmenu-widget onedrive-widget clash-widget pulseaudio network-short battery date
 
 # Bottom modules
 bottom-left = powermenu info-hackspeed weather
@@ -92,16 +92,16 @@ line-size = 6
 # Format is {identifier};{icon}, where identifier is the name of the workspace,
 # and icon is the label to be displayed.
 # If no icon is provided, {identifier} will be used as label.
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;
-ws-icon-4 = V;
-ws-icon-5 = VI;
-ws-icon-6 = VII;
-ws-icon-7 = VIII;
-ws-icon-8 = IX;
-ws-icon-9 = X;
+ws-icon-0 = home;
+ws-icon-1 = www;
+ws-icon-2 = dev;
+ws-icon-3 = edt;
+ws-icon-4 = play;
+ws-icon-5 = ref;
+ws-icon-6 = note;
+ws-icon-7 = chat;
+ws-icon-8 = 8;
+ws-icon-9 = 9;
 # default icon used if not specified.
 ws-icon-default = 
 
