@@ -1,30 +1,13 @@
 ; vim:ft=dosini
 [module/powermenu]
-type = custom/menu
+type = custom/text
 
-expand-right = true
+content = 
+content-foreground = ${colors.background}
+content-background = ${colors.nord9}
+content-padding = 3
 
-label-open = 
-label-open-foreground = ${colors.background}
-label-open-background = ${colors.nord9}
-label-open-padding = 3
-label-close = 
-label-close-foreground = ${colors.background}
-label-close-background = ${colors.nord9}
-label-close-padding = 4
-
-menu-0-0 = 
-menu-0-0-foreground = ${colors.urgent}
-menu-0-0-padding = 2
-menu-0-0-exec = shutdown
-menu-0-1 = 
-menu-0-1-foreground = ${colors.warning}
-menu-0-1-padding = 2
-menu-0-1-exec = reboot
-menu-0-2 = 
-menu-0-2-foreground = ${colors.warning}
-menu-0-2-padding = 2
-menu-0-2-exec = systemctl suspend
+click-left = rofi -show power-menu -modi power-menu:rofi-power-menu
 
 [module/cpu]
 type = internal/cpu

@@ -201,6 +201,32 @@ ramp-headphones-0 = 
 
 ramp-volume-foreground = ${colors.nord7}
 
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+
+interval = 5
+
+; Format 
+format-volume = <ramp-volume> <label-volume>
+format-volume-underline = ${colors.function}
+
+label-muted =  muted
+label-muted-foreground = ${colors.urgent}
+label-muted-underline = ${colors.urgent}
+
+ramp-volume-0 = 
+ramp-volume-0-foreground = ${colors.success}
+ramp-volume-1 = 
+ramp-volume-1-foreground = ${colors.notify}
+ramp-volume-2 = 
+ramp-volume-2-foreground = ${colors.urgent}
+
+ramp-headphones-0 = 
+
+ramp-volume-foreground = ${colors.nord7}
+
 [module/backlight]
 type = internal/backlight
 
@@ -354,6 +380,15 @@ content-padding = 3
 
 click-left = ~/.config/polybar/scripts/rofi_run
 
+[module/logseq-sync]
+type = custom/text
+
+content = 
+content-foreground = ${colors.success}
+content-padding = 1
+content-left = git -C /home/yucklys/OneDrive/logseq push
+content-right = git -C /home/yucklys/OneDrive/logseq pull -ff
+
 [module/mullvad-status]
 type = custom/script
 
@@ -361,4 +396,3 @@ exec = ~/.config/polybar/scripts/mullvad.sh
 interval = 5
 
 click-left = ${config.mullvad-click-left}
-
