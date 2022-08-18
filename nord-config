@@ -13,12 +13,16 @@ offset-x = 0
 offset-y = 0
 radius = 0.0
 
+# if you are using bspwm and experiencing weird bar positioning,
+# you can uncomment the following lines and restart the bar to see
+# if the problem is solved.
 fixed-center = true
 override-redirect = false
 wm-restack = bspwm
 
 # module list:
-# alsa: Display current volume
+# alsa: Display current volume for alsa device
+# pulseaudio: Display current volume for pulseaudio
 # backlight: Display screen brightness
 # date: Display date
 # notify: Notify icon, can customize its binding
@@ -43,11 +47,12 @@ wm-restack = bspwm
 # clash-widget: showing clash service
 # onedrive-widget: showing onedrive service
 # clipmenu-widget: showing clipmenu service
+# logseq-sync: Syncing logseq folder by git
 
 # Top modules
 top-left = rofi-run bspwm title
 top-center = mpd
-top-right = keyboard clipmenu-widget onedrive-widget clash-widget alsa network-short battery date
+top-right = keyboard logseq-sync clipmenu-widget onedrive-widget clash-widget pulseaudio network-short battery date
 
 # Bottom modules
 bottom-left = powermenu info-hackspeed weather
