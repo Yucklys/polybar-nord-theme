@@ -40,11 +40,11 @@ inherit = bar/base
 
 module-margin = 1
 
-font-0 = WenQuanYiMicroHei:size=12
-font-1 = FontAwesome6FreeSolid:pixelsize=12;1
-font-2 = FontAwesome6FreeRegular:pixelsize=12;1
-font-3 = FontAwesome6Brands:pixelsize=8;1
-font-4 = FiraCodeRegular:pixelsize=12
+font-0 = ${config.font-0}
+font-1 = ${config.font-1}
+font-2 = ${config.font-2}
+font-3 = ${config.font-3}
+font-4 = ${config.font-4}
 
 modules-left = ${config.top-left}
 modules-center = ${config.top-center}
@@ -59,11 +59,11 @@ bottom = true
 
 module-margin = 2
 
-font-0 = WenQuanYiMicroHei:size=12
-font-1 = FontAwesome6FreeSolid:pixelsize=12;1
-font-2 = FontAwesome6Brands:pixelsize=8;1
-font-3 = Weather Icons:style=Regular:size=12;1
-font-4 = FiraCodeRegular:pixelsize=12
+font-0 = ${config.font-0}
+font-1 = ${config.font-1}
+font-2 = ${config.font-2}
+font-3 = ${config.font-3}
+font-4 = ${config.font-4}
 
 modules-left = ${config.bottom-left}
 modules-center = ${config.bottom-center}

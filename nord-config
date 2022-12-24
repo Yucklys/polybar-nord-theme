@@ -5,8 +5,15 @@
 # Bar Settings
 # -------------------------------------------
 
+# Fonts
+font-0 = WenQuanYiMicroHei:size=24
+font-1 = FontAwesome6FreeSolid:pixelsize=24;1
+font-2 = FontAwesome6FreeRegular:pixelsize=24;1
+font-3 = FontAwesome6Brands:pixelsize=16;1
+font-4 = FiraCodeRegular:pixelsize=24
+
 # DPI value for HiDPI screen
-dpi = 192
+dpi = 0
 # Main monitor, default to MONITOR environment variable.
 monitor = ${env:MONITOR:eDP-1}
 
@@ -26,7 +33,7 @@ fixed-center = true
 # you can uncomment the following lines and restart the bar to see
 # if the problem is solved.
 # If problem still persist, look at Polybar's wiki for more options.
-override-redirect = true
+override-redirect = false
 wm-restack = bspwm
 
 # -------------------------------------------
