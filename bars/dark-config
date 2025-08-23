@@ -61,7 +61,7 @@ module-margin = 2
 
 font-0 = WenQuanYiMicroHei:size=12
 font-1 = Font Awesome 7 Free Solid:style=Solid,pixelsize=12;1
-font-3 = Font Awesome 7 Brands Regular:style=Regular,pixelsize=8;1
+font-2 = Font Awesome 7 Brands Regular:style=Regular,pixelsize=8;1
 font-3 = Weather Icons:style=Regular:size=12;1
 font-4 = FiraCodeRegular:pixelsize=12
 
